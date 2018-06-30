@@ -2,10 +2,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
+condt bluebird = require("bluebird");
 const mongoose = require("mongoose");
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
-mongoose.Promise = Promise;
+mongoose.Promise = bluebird;
 
 // Create Instance of Express
 const app = express();
@@ -24,7 +25,7 @@ app.use(express.static("public"));
 // -------------------------------------------------
 
 // MongoDB Configuration configuration 
-var db_conn = process.env.MONGODB_URI || "mongodb://localhost/nytSearch"
+const db_conn = process.env.MONGODB_URI || "mongodb://localhost/nytSearch"
 mongoose.connect(db_conn, function(error){
 	if(error){
 		console.error(error)
