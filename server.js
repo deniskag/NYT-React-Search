@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-condt bluebird = require("bluebird");
+const bluebird = require("bluebird");
 const mongoose = require("mongoose");
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
