@@ -24,7 +24,7 @@ app.use(express.static("public"));
 // -------------------------------------------------
 
 // MongoDB Configuration configuration 
-const db_conn = process.env.MONGODB_URI || "mongodb://localhost/nytSearch"
+var db_conn = process.env.MONGODB_URI || "mongodb://localhost/nytSearch"
 mongoose.connect(db_conn, function(error){
 	if(error){
 		console.error(error)
